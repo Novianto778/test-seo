@@ -1,12 +1,18 @@
-// app/server-sitemap-index.xml/route.ts
 import { getServerSideSitemapIndex } from "next-sitemap";
 
-export async function GET(request: Request) {
-  // Method to source urls from cms
-  // const urls = await fetch('https//example.com/api')
-
-  return getServerSideSitemapIndex([
-    "https://example.com/path-1.xml",
-    "https://example.com/path-2.xml",
-  ]);
+export async function GET() {
+  const routes = [
+    "general.xml",
+    "lowongan.xml",
+    "berita.xml",
+    "acara.xml",
+    "development-program.xml",
+  ];
+  const SITEMAP_URL = "https://example.com";
+  const routesWithBase = routes.map(
+    (route) => `${SITEMAP_URL}/sitemap/${route}`
+  );
+  return getServerSideSitemapIndex(routesWithBase, {
+    "Content-Type": "application/xml",
+  });
 }
