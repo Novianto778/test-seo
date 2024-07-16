@@ -8,11 +8,11 @@ export async function GET() {
     "acara.xml",
     "development-program.xml",
   ];
-  const SITEMAP_URL = "https://example.com";
+  const SITEMAP_URL = "https://test-seo-olive.vercel.app";
   const routesWithBase = routes.map(
     (route) => `${SITEMAP_URL}/sitemap/${route}`
   );
   return getServerSideSitemapIndex(routesWithBase, {
-    "Content-Type": "text/xml",
+    "Content-Type": "application/xml",
   });
 }
