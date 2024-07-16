@@ -13,6 +13,6 @@ export async function GET() {
     (route) => `${SITEMAP_URL}/sitemap/${route}`
   );
   return getServerSideSitemapIndex(routesWithBase, {
-    "Content-Type": "application/xml",
+    "Content-Type": "text/xml",
   });
 }
