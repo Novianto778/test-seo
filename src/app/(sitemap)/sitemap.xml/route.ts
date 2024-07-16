@@ -1,6 +1,6 @@
 import { getServerSideSitemapIndex } from "next-sitemap";
 
-export async function GET(request: Request) {
+export async function GET() {
   const routes = [
     "general.xml",
     "lowongan.xml",
@@ -12,10 +12,6 @@ export async function GET(request: Request) {
   const routesWithBase = routes.map(
     (route) => `${SITEMAP_URL}/sitemap/${route}`
   );
-  // const requestHeaders = new Headers(request.headers);
-
-  // requestHeaders.set("Content-Type", "application/xml");
-
   return getServerSideSitemapIndex(routesWithBase, {
     "Content-Type": "application/xml",
   });
