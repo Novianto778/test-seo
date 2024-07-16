@@ -12,11 +12,11 @@ export async function GET(request: Request) {
   const routesWithBase = routes.map(
     (route) => `${SITEMAP_URL}/sitemap/${route}`
   );
-  const requestHeaders = new Headers(request.headers);
+  // const requestHeaders = new Headers(request.headers);
 
-  requestHeaders.set("Content-Type", "application/xml");
+  // requestHeaders.set("Content-Type", "application/xml");
 
   return getServerSideSitemapIndex(routesWithBase, {
-    headers: requestHeaders,
+    "Content-Type": "application/xml",
   });
 }
