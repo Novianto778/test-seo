@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import CanonicalURL from "./CanonicalURL";
 
 interface MetaParams {
   title: string;
@@ -40,7 +41,7 @@ export default function MetaGenerator(params: MetaParams) {
         {params?.description && (
           <meta name="description" content={`${params?.description}`} />
         )}
-        {/* <CanonicalURL /> */}
+        <CanonicalURL />
       </head>
     );
   };
