@@ -13,6 +13,10 @@ export async function GET(request: Request) {
     (route) => `${SITEMAP_URL}/sitemap/${route}`
   );
   const requestHeaders = new Headers(request.headers);
+
   requestHeaders.set("Content-Type", "application/xml");
-  return getServerSideSitemapIndex(routesWithBase, requestHeaders);
+
+  return getServerSideSitemapIndex(routesWithBase, {
+    headers: requestHeaders,
+  });
 }
