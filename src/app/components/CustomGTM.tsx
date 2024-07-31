@@ -8,6 +8,7 @@ type Props = {
 const CustomGTM = ({ containerId }: Props) => {
   return (
     <Script
+      defer
       id="google-tag-manager"
       strategy="beforeInteractive"
       dangerouslySetInnerHTML={{
