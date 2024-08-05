@@ -7,6 +7,10 @@ import NewsCard from "../news/NewsCard";
 const PostSection = () => {
   const { data, isLoading } = useSuspenseQuery(newsSectionOptions);
 
+  if (isLoading) {
+    return "Loading...";
+  }
+
   return (
     <section>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

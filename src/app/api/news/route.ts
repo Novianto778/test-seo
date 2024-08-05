@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
   const supabase = createClient();
 
   // 5 seconds delay
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  // await new Promise((resolve) => setTimeout(resolve, 5000));
 
   // make pagination data
   const limit = body?.limit || 20;
