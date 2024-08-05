@@ -7,7 +7,7 @@ type Props = {};
 
 const OtherNewsClient = (props: Props) => {
   const queryClient = getQueryClient();
-  const newsDetailData = queryClient.getQueryData(["news", "2"]);
+  const newsDetailData = queryClient.getQueryData(["news", "2"]) as any;
 
   return (
     <>
