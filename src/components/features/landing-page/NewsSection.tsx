@@ -12,6 +12,8 @@ const PostSection = () => {
     return "Loading...";
   }
 
+  console.log("data", data);
+
   return (
     <section>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -22,7 +24,7 @@ const PostSection = () => {
           {isLoading ? (
             <p className="text-center text-2xl">Loading</p>
           ) : (
-            data?.data.map((post) => <NewsCard key={post.id} news={post} />)
+            data?.data?.map((post) => <NewsCard key={post.id} news={post} />)
           )}
         </div>
         <a
