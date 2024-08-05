@@ -3,6 +3,7 @@
 import { newsSectionOptions } from "@/services/api/news/query";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import NewsCard from "../news/NewsCard";
+export const dynamic = "force-dynamic";
 
 const PostSection = () => {
   const { data, isLoading } = useSuspenseQuery(newsSectionOptions);
