@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
   await new Promise((resolve) => setTimeout(resolve, 5000));
 
   // make pagination data
-  const limit = body?.limit || 10;
+  const limit = body?.limit || 20;
   const page = body?.page || 1;
   const offset = (page - 1) * limit;
   const date_from = body?.from;

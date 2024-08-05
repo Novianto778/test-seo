@@ -13,7 +13,7 @@ export interface News {
 export interface NewsParams {
   limit?: number;
   page?: number;
-  date_from?: Date;
-  date_to?: Date;
+  from?: Date;
+  to?: Date;
   q?: string;
 }

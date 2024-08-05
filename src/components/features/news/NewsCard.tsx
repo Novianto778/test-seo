@@ -1,15 +1,20 @@
 import { News } from "@/types/news.type";
 import { cn } from "@/utils/cn";
+import { slugify } from "@/utils/slugify";
 import Image from "next/image";
-import React from "react";
+import Link, { LinkProps } from "next/link";
+import React, { HTMLProps } from "react";
 
 type Props = {
   news: News;
-} & React.HTMLProps<HTMLDivElement>;
+} & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps>;
 
 const NewsCard = ({ news, className, ...props }: Props) => {
+  const slug = slugify(news.title);
+  const hrefLink = `/news/detail?id=${news.id}&title=${slug}`;
   return (
-    <div
+    <Link
+      href={hrefLink}
       className={cn(
         "group cursor-pointer w-full max-lg:max-w-xl border border-gray-300 rounded-2xl p-5 transition-all duration-300 hover:border-indigo-600",
         className
@@ -40,7 +45,7 @@ const NewsCard = ({ news, className, ...props }: Props) => {
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

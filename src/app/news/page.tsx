@@ -17,10 +17,6 @@ type Props = {
 };
 
 const NewsPage = ({ searchParams }: Props) => {
-  console.log("render news page");
-  // const data = await getNews(searchParams as NewsParams);
-  // console.log(data);
-
   const queryClient = getQueryClient();
   queryClient.prefetchQuery(newsOptions(searchParams));
   return (
@@ -30,17 +26,9 @@ const NewsPage = ({ searchParams }: Props) => {
         <div className="mt-4">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-3 w-full max-md:max-w-md max-md:mx-auto">
-              <NewsFilterSidebar />
+              <NewsFilterSidebar searchParams={searchParams as NewsParams} />
             </div>
             <div className="col-span-12 md:col-span-9">
-              {/* <Suspense fallback={<NewsContentSkeleton length={6} />}>
-                {data.data.map((news, index) => (
-                  <div key={index}>
-                    <h1>{news.title}</h1>
-                    <p>{news.author}</p>
-                  </div>
-                ))}
-              </Suspense> */}
               <Suspense
                 key={JSON.stringify(searchParams)}
                 fallback={<NewsContentSkeleton length={6} />}

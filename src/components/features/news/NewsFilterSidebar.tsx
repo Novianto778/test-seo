@@ -1,35 +1,15 @@
 import { filterNews } from "@/actions/news";
+import { NewsParams } from "@/types/news.type";
 import { Search } from "lucide-react";
 import "react-day-picker/style.css";
 
-type Props = {};
+type Props = {
+  searchParams: NewsParams;
+};
 
-const NewsFilterSidebar = (props: Props) => {
-  // const [startDate, setStartDate] = useState<Date>();
-  // const [endDate, setEndDate] = useState<Date>();
-  // const [q, setQ] = useState("");
-  // const router = useRouter();
-
-  // set query params on submit
-  // const handleSearch = () => {
-  //   const params = new URLSearchParams();
-  //   if (startDate) {
-  //     const shortStartDate = new Date(startDate).toISOString().split("T")[0];
-  //     params.append("from", shortStartDate);
-  //   }
-
-  //   if (endDate) {
-  //     const shortEndDate = new Date(endDate).toISOString().split("T")[0];
-  //     params.append("to", shortEndDate);
-  //   }
-
-  //   if (q) {
-  //     params.append("q", q);
-  //   }
-
-  //   // set query params
-  //   router.push("/news?" + params.toString());
-  // };
+const NewsFilterSidebar = ({ searchParams }: Props) => {
+  const fromValue = searchParams.from?.toString();
+  const toValue = searchParams.to?.toString();
   return (
     <>
       <form
@@ -47,12 +27,7 @@ const NewsFilterSidebar = (props: Props) => {
             >
               Start Date
             </label>
-            <input
-              type="date"
-              name="from"
-              id="from"
-              // onChange={(e) => setStartDate(new Date(e.target.value))}
-            />
+            <input type="date" name="from" id="from" value={fromValue} />
           </div>
           <p className="px-1 font-bold text-sm leading-6 text-gray-600">to</p>
           <div className="relative w-full">
@@ -62,12 +37,7 @@ const NewsFilterSidebar = (props: Props) => {
             >
               End Date
             </label>
-            <input
-              type="date"
-              name="to"
-              id="to"
-              // onChange={(e) => setEndDate(new Date(e.target.value))}
-            />
+            <input type="date" name="to" id="to" value={toValue} />
           </div>
         </div>
 
@@ -79,7 +49,7 @@ const NewsFilterSidebar = (props: Props) => {
         </label>
         <div className="relative w-full mb-8">
           <input
-            // onChange={(e) => setQ(e.target.value)}
+            value={searchParams.q}
             type="text"
             id="q"
             name="q"

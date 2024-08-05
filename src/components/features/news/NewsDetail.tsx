@@ -1,6 +1,7 @@
 "use client";
 import { newsDetailOptions } from "@/services/api/news/query";
 import { useSuspenseQuery } from "@tanstack/react-query";
+import OtherNewsServer from "./detail/OtherNewsServer";
 
 type Props = {
   id: string;
@@ -96,8 +97,8 @@ const NewsDetail = ({ id }: Props) => {
                   y2="11.975"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#7C3AED" />
-                  <stop offset="0.993738" stop-color="#4F46E5" />
+                  <stop stopColor="#7C3AED" />
+                  <stop offset="0.993738" stopColor="#4F46E5" />
                 </linearGradient>
                 <linearGradient
                   id="paint1_linear_9284_62585"
@@ -107,8 +108,8 @@ const NewsDetail = ({ id }: Props) => {
                   y2="11.975"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#7C3AED" />
-                  <stop offset="0.993738" stop-color="#4F46E5" />
+                  <stop stopColor="#7C3AED" />
+                  <stop offset="0.993738" stopColor="#4F46E5" />
                 </linearGradient>
               </defs>
             </svg>
@@ -140,8 +141,8 @@ const NewsDetail = ({ id }: Props) => {
                   y2="17.4644"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#7C3AED" />
-                  <stop offset="0.993738" stop-color="#4F46E5" />
+                  <stop stopColor="#7C3AED" />
+                  <stop offset="0.993738" stopColor="#4F46E5" />
                 </linearGradient>
                 <linearGradient
                   id="paint1_linear_9553_63113"
@@ -151,8 +152,8 @@ const NewsDetail = ({ id }: Props) => {
                   y2="17.4644"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#7C3AED" />
-                  <stop offset="0.993738" stop-color="#4F46E5" />
+                  <stop stopColor="#7C3AED" />
+                  <stop offset="0.993738" stopColor="#4F46E5" />
                 </linearGradient>
               </defs>
             </svg>
@@ -222,6 +223,7 @@ const NewsDetail = ({ id }: Props) => {
           </ul>
         </div>
       </section>
+      <OtherNewsServer />
     </>
   );
 };

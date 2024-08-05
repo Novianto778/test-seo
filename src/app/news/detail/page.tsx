@@ -1,14 +1,6 @@
 import NewsDetailContainer from "@/components/features/news/detail/NewsDetailContainer";
+import OtherNewsClient from "@/components/features/news/detail/OtherNewsClient";
 import OtherNewsContainer from "@/components/features/news/detail/OtherNewsContainer";
-import NewsDetail from "@/components/features/news/NewsDetail";
-import NewsDetailSkeleton from "@/components/features/news/NewsDetailSkeleton";
-import {
-  newsDetailOptions,
-  newsSectionOptions,
-} from "@/services/api/news/query";
-import { getQueryClient } from "@/utils/get-query-client";
-import { dehydrate, hydrate, HydrationBoundary } from "@tanstack/react-query";
-import React, { Suspense } from "react";
 
 type Props = {
   searchParams: {
@@ -23,7 +15,8 @@ const NewsDetailPage = ({ searchParams }: Props) => {
   return (
     <div>
       <NewsDetailContainer id={id} />
-      <OtherNewsContainer />
+      {/* <OtherNewsContainer /> */}
+      {/* <OtherNewsClient /> */}
     </div>
   );
 };
