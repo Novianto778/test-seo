@@ -1,6 +1,4 @@
 import NewsDetailContainer from "@/components/features/news/detail/NewsDetailContainer";
-import OtherNewsClient from "@/components/features/news/detail/OtherNewsClient";
-import OtherNewsContainer from "@/components/features/news/detail/OtherNewsContainer";
 
 type Props = {
   searchParams: {
